@@ -1,0 +1,17 @@
+syntax = "proto3";  // Usamos la sintaxis de gRPC versión 3
+
+// Definición del servicio
+service MyService {
+  // Definición del RPC SayHello
+  rpc SayHello (HelloRequest) returns (HelloResponse);
+}
+
+// Mensaje para la solicitud
+message HelloRequest {
+  string name = 1;  // El mensaje recibirá un campo 'name' de tipo string
+}
+
+// Mensaje para la respuesta
+message HelloResponse {
+  string message = 1;  // El mensaje de respuesta contiene un campo 'message' de tipo string
+}
